@@ -60,7 +60,7 @@ Lanjalan
                         <div class="travel-country">INDONESIA</div>
                         <div class="travel-location">DERATAN, BALI</div>
                         <div class="travel-button mt-auto">
-                            <a href="details.html" class="btn btn-travel-details">View Details</a>
+                            <a href="{{ url('/detail') }}" class="btn btn-travel-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ Lanjalan
                         <div class="travel-country">INDONESIA</div>
                         <div class="travel-location">BOROBUDUR, MAGELANG</div>
                         <div class="travel-button mt-auto">
-                            <a href="details.html" class="btn btn-travel-details">View Details</a>
+                            <a href="{{ url('/detail') }}" class="btn btn-travel-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ Lanjalan
                         <div class="travel-country">INDONESIA</div>
                         <div class="travel-location">RAJA AMPAT,PAPUA</div>
                         <div class="travel-button mt-auto">
-                            <a href="details.html" class="btn btn-travel-details">View Details</a>
+                            <a href="{{ url('/detail') }}" class="btn btn-travel-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ Lanjalan
                         <div class="travel-country">INDONESIA</div>
                         <div class="travel-location">BROMO, MALANG</div>
                         <div class="travel-button mt-auto">
-                            <a href="details.html" class="btn btn-travel-details">View Details</a>
+                            <a href="{{ url('/detail') }}" class="btn btn-travel-details">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ Lanjalan
             <div class="col-sm-6 col-md-6 col-lg-4">
                 <div class="card card-testimonial text-center">
                     <div class="testimonial-content">
-                        <img src="frontend/images/testimonial1.png" alt="User" class="mb-4 circle-rounded">
+                        <img src="{{ url('frontend/images/testimonial1.png') }}" alt="User" class="mb-4 circle-rounded">
                         <h3 class="mb-4">Yusril</h3>
                         <p class="testimonial">" It was glorius and i        could
                             not stop to say wohoo for
@@ -143,7 +143,7 @@ Lanjalan
             <div class="col-sm-6 col-md-6 col-lg-4">
                 <div class="card card-testimonial text-center">
                     <div class="testimonial-content">
-                        <img src="frontend/images/testimonial2.png" alt="User" class="mb-4 circle-rounded">
+                        <img src="{{ url('frontend/images/testimonial2.png') }}" alt="User" class="mb-4 circle-rounded">
                         <h3 class="mb-4">Jhon</h3>
                         <p class="testimonial">" The trip was amazing and
                             I saw something beautiful in
@@ -157,7 +157,7 @@ Lanjalan
             <div class="col-sm-6 col-md-6 col-lg-4">
                 <div class="card card-testimonial text-center">
                     <div class="testimonial-content">
-                        <img src="frontend/images/testimonial3.png" alt="User" class="mb-4 circle-rounded">
+                        <img src="{{ url('frontend/images/testimonial3.png') }}" alt="User" class="mb-4 circle-rounded">
                         <h3 class="mb-4">Yusril</h3>
                         <p class="testimonial">" I lovet it when the         waves
                             was shaking harder - I was

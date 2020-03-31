@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navid">
             <ul class="navbar-nav ml-auto mr-3">
                 <li class="nav-item mx-md-2">
-                    <a href="#" class="nav-link active">Home</a>
+                    <a href="{{ url('/') }}" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item mx-md-2">
                     <a href="#" class="nav-link">Paket Travel</a>
