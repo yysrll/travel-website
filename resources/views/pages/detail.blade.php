@@ -1,4 +1,4 @@
-@include('layouts.app')
+@extends('layouts.app')
 @section('title', 'Detail Travel')
 
 @section('content')
@@ -27,23 +27,23 @@
                         <p>Republic of Indonesia</p>
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img src="frontend/images/bromo1.jpg" class="xzoom" id="xzoom-default" xoriginal="frontend/images/bromo1.jpg">
+                                <img src="{{ url('frontend/images/bromo1.jpg') }}" class="xzoom" id="xzoom-default" xoriginal="frontend/images/bromo1.jpg">
                             </div>
                             <div class="xzoom-thumbs">
-                                <a href="frontend/images/bromo2.jpg">
-                                    <img src="frontend/images/bromo2.jpg" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo2.jpg">
+                                <a href="{{ url('frontend/images/bromo2.jpg') }}">
+                                    <img src="{{ url('frontend/images/bromo2.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo2.jpg">
                                 </a>
-                                <a href="frontend/images/bromo3.jpg">
-                                    <img src="frontend/images/bromo3.jpg" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo3.jpg">
+                                <a href="{{ url('frontend/images/bromo3.jpg') }}">
+                                    <img src="{{ url('frontend/images/bromo3.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo3.jpg">
                                 </a>
-                                <a href="frontend/images/bromo4.jpg">
-                                    <img src="frontend/images/bromo4.jpg" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo4.jpg">
+                                <a href="{{ url('frontend/images/bromo4.jpg') }}">
+                                    <img src="{{ url('frontend/images/bromo4.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo4.jpg">
                                 </a>
-                                <a href="frontend/images/bromo5.jpg">
-                                    <img src="frontend/images/bromo5.jpg" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo5.jpg">
+                                <a href="{{ url('frontend/images/bromo5.jpg') }}">
+                                    <img src="{{ url('frontend/images/bromo5.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo5.jpg">
                                 </a>
-                                <a href="frontend/images/bromo6.jpg">
-                                    <img src="frontend/images/bromo6.jpg" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo6.jpg">
+                                <a href="{{ url('frontend/images/bromo6.jpg') }}">
+                                    <img src="{{ url('frontend/images/bromo6.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo6.jpg">
                                 </a>
                             </div>
                         </div>
@@ -60,21 +60,21 @@
                                 when compared to the lush green valleys all around the caldera.</p>
                         <div class="row features">
                             <div class="col-md-4">
-                                <img src="frontend/images/ic_event.png" alt="logo features" class="features-image">
+                                <img src="{{ url('frontend/images/ic_event.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Featured Event</h3>
                                     <p>Yadnya Kasada Fest</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
-                                <img src="frontend/images/ic_language.png" alt="logo features" class="features-image">
+                                <img src="{{ url('frontend/images/ic_language.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Language</h3>
                                     <p>Bahasa Indonesia</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
-                                <img src="frontend/images/ic_food.png" alt="logo features" class="features-image">
+                                <img src="{{ url('frontend/images/ic_food.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Food</h3>
                                     <p>Local Food</p>
@@ -87,12 +87,12 @@
                     <div class="card card-details card-right">
                         <h2>Members are going</h2>
                         <div class="members my-2">
-                            <img src="frontend/images/member1.png" alt="member" class="member-image mr-1">
-                            <img src="frontend/images/member2.png" alt="member" class="member-image mr-1">
-                            <img src="frontend/images/member3.png" alt="member" class="member-image mr-1">
-                            <img src="frontend/images/member4.png" alt="member" class="member-image mr-1">
-                            <img src="frontend/images/member5.png" alt="member" class="member-image mr-1">
-                            <img src="frontend/images/member6.png" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member1.png') }}" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member2.png') }}" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member3.png') }}" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member4.png') }}" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member5.png') }}" alt="member" class="member-image mr-1">
+                            <img src="{{ url('frontend/images/member6.png') }}" alt="member" class="member-image mr-1">
                         </div>
                         <hr>
                         <h2>Trip Information</h2>
