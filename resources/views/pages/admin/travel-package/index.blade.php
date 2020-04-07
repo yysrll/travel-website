@@ -38,11 +38,11 @@
                                 <td>{{ $item->departure_date }}</td>
                                 <td>{{ $item->type }}</td>
                                 <td>
-                                    <a href="{{ route('travel-package.edit'), $item->id }}" class="btn btn-info">
+                                    <a href="{{ route('travel-package.edit', $item->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
 
-                                    <form action="{{ route('travel-package.destroy'), $item->id }}" method="post" class="d-inline">
+                                    <form action="{{ route('travel-package.destroy', $item->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
