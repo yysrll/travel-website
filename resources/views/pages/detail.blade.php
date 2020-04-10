@@ -23,61 +23,47 @@
             <div class="row">
                 <div class="col-lg-8 pl-lg-0">
                     <div class="card card-details">
-                        <h1>Bromo</h1>
-                        <p>Republic of Indonesia</p>
+                        <h1>{{ $item->title }}</h1>
+                        <p>{{ $item->location }}</p>
+                        @if($item->galleries->count())
+
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img src="{{ url('frontend/images/bromo1.jpg') }}" class="xzoom" id="xzoom-default" xoriginal="frontend/images/bromo1.jpg">
+                                <img src="{{ Storage::url($item->galleries->first()->image) }}" class="xzoom" id="xzoom-default" xoriginal="{{ Storage::url($item->galleries->first()->image) }}">
                             </div>
                             <div class="xzoom-thumbs">
-                                <a href="{{ url('frontend/images/bromo2.jpg') }}">
-                                    <img src="{{ url('frontend/images/bromo2.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo2.jpg">
+                            @foreach ($item->galleries as $gallery)
+                                <a href="{{ Storage::url($gallery->image) }}">
+                                    <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery" width="128" xpreview="{{ Storage::url($gallery->image) }}">
                                 </a>
-                                <a href="{{ url('frontend/images/bromo3.jpg') }}">
-                                    <img src="{{ url('frontend/images/bromo3.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo3.jpg">
-                                </a>
-                                <a href="{{ url('frontend/images/bromo4.jpg') }}">
-                                    <img src="{{ url('frontend/images/bromo4.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo4.jpg">
-                                </a>
-                                <a href="{{ url('frontend/images/bromo5.jpg') }}">
-                                    <img src="{{ url('frontend/images/bromo5.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo5.jpg">
-                                </a>
-                                <a href="{{ url('frontend/images/bromo6.jpg') }}">
-                                    <img src="{{ url('frontend/images/bromo6.jpg') }}" class="xzoom-gallery" width="128" xpreview="frontend/images/bromo6.jpg">
-                                </a>
+                            @endforeach
                             </div>
                         </div>
+
+                        @endif
+
                         <h2>About Travel</h2>
-                        <p>Mount Bromo (2,329m) is easily recognized as the entire top has been blown off and the 
-                            crater inside constantly belches white sulfurous smoke. It sits inside the massive 
-                            Tengger caldera. with a diameter of approximately 10km, surrounded by the Laut Pasir
-                                (Sea of Sand) of fine volcanic sand. The overall effect is unsettlingly unearthly, especially
-                                when compared to the lush green valleys all around the caldera.</p>
-                        <p>Mount Bromo (2,329m) is easily recognized as the entire top has been blown off and the 
-                            crater inside constantly belches white sulfurous smoke. It sits inside the massive 
-                            Tengger caldera. with a diameter of approximately 10km, surrounded by the Laut Pasir
-                                (Sea of Sand) of fine volcanic sand. The overall effect is unsettlingly unearthly, especially
-                                when compared to the lush green valleys all around the caldera.</p>
+                        <p>{!! $item->about !!}</p>
                         <div class="row features">
                             <div class="col-md-4">
                                 <img src="{{ url('frontend/images/ic_event.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Featured Event</h3>
-                                    <p>Yadnya Kasada Fest</p>
+                                    <p>{{ $item->featured_event }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
                                 <img src="{{ url('frontend/images/ic_language.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Language</h3>
-                                    <p>Bahasa Indonesia</p>
+                                    <p>{{ $item->language }}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
                                 <img src="{{ url('frontend/images/ic_food.png') }}" alt="logo features" class="features-image">
                                 <div class="description">
                                     <h3>Food</h3>
-                                    <p>Local Food</p>
+                                    <p>{{ $item->foods }}</p>
                                 </div>
                             </div>
                         </div>
@@ -99,24 +85,35 @@
                         <table class="trip-informations">
                             <tr>
                                 <th width="50%">Date of Departure</th>
-                                <td width="50%" class="text-right">22 Jan, 2020</td>
+                                <td width="50%" class="text-right">
+                                    {{ \Carbon\Carbon::create($item->departure_date)->format('F n, Y') }}
+                                </td>
                             </tr>
                             <tr>
                                 <th width="50%">Duration</th>
-                                <td width="50%" class="text-right">3D 2Y</td>
+                                <td width="50%" class="text-right">{{ $item->duration }}</td>
                             </tr>
                             <tr>
                                 <th width="50%">Type of Trip</th>
-                                <td width="50%" class="text-right">Open Trip</td>
+                                <td width="50%" class="text-right">{{ $item->type}}</td>
                             </tr>
                             <tr>
                                 <th width="50%">Price</th>
-                                <td width="50%" class="text-right">$70.00/Person</td>
+                                <td width="50%" class="text-right">${{ $item->price }},00/Person</td>
                             </tr>
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="{{ url('/checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
+                    @auth
+                        <form action="" method="post">
+                            <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
+                                Join Now
+                            </button>
+                        </form>
+                    @endauth
+                    @guest
+                        <a href="{{ route('login') }}" class="btn btn-block btn-join-now mt-3 py-2">Login or Register to Join</a>
+                    @endguest
                     </div>
                 </div>
             </div>
