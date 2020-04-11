@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Transaction;
 use App\TransactionDetail;
 use App\TravelPackage;
@@ -37,7 +38,7 @@ class CheckoutController extends Controller
     public function remove(Request $request, $detail_id) {
         $item = TransactionDetail::findOrFail($detail_id);
 
-        $transaction = Transaction::with(['details', 'travel_package'])->findOrFail($item->transactions_id);
+        $transaction = Transaction::with(['details', 'travel_package'])->findOrFail($item->transaction_id);
 
         if($item->is_visa) {
             $transaction->transaction_total -= 190;
@@ -54,13 +55,13 @@ class CheckoutController extends Controller
     
     public function create(Request $request, $id) {
         $request->validate([
-            'username' => 'required|string|exists:user,username',
+            'username' => 'required|string|exists:users,username',
             'is_visa' => 'required|boolean',
             'doe_passport' => 'required'
         ]);
 
         $data = $request->all();
-        $data['transactions_id'] = $id;
+        $data['transaction_id'] = $id;
 
         TransactionDetail::create($data);
 
